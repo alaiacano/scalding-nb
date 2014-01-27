@@ -19,7 +19,6 @@ class NBTestJob(args: Args) extends Job(args) {
     .discard('class)
 
   val model = GaussianNB.train(irisTrain)
-    .write(Tsv("model.tsv"))
 
   val predictions = GaussianNB.classify(irisTest, model).rename(('id, 'class) -> ('id2, 'classPred))
 
@@ -240,7 +239,6 @@ object MultinomialNB extends BaseDiscreteNB {
       .map(('score, 'evidence) -> 'sumEvidence) {
         values : (Double, Double) => values._1 * values._2
       }
-      .write(Tsv("mn_jnn.tsv"))
     res
   }
 }
