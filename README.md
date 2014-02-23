@@ -37,3 +37,7 @@ class NBTestJob(args: Args) extends Job(args) {
 The above code classifies all of the species in the iris data set correctly:
 
 ![](results.png)
+
+# Type Safe Version
+
+If you're looking for a version that uses scalding's type safe API, see [here](http://www.github.com/alaiacano/scalding-ml).
